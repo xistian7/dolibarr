@@ -5,6 +5,22 @@
 // Take a look at conf.php.example file for an example of conf.php file
 // and explanations for all possibles parameters.
 //
+/*$dolibarr_main_url_root='http://dolibarr.local';
+$dolibarr_main_document_root='C:/xampp/htdocs/dolibarr';
+$dolibarr_main_url_root_alt='/custom';
+$dolibarr_main_document_root_alt='C:/xampp/htdocs/dolibarr/custom';
+$dolibarr_main_data_root='C:/xampp/htdocs/dolibarr/documents';
+$dolibarr_main_db_host='mysql521int.srv-hostalia.com';
+$dolibarr_main_db_port='3306';
+$dolibarr_main_db_name='db5210912_doli';
+$dolibarr_main_db_prefix='llx_';
+$dolibarr_main_db_user='u5210912_doli';
+$dolibarr_main_db_pass='BdI9wgYFV9';
+$dolibarr_main_db_type='mysqli';
+$dolibarr_main_db_character_set='utf8';
+$dolibarr_main_db_collation='utf8_bin';
+// Authentication settings
+$dolibarr_main_authentication='dolibarr';*/
 $dolibarr_main_url_root='http://dolibarr.local';
 $dolibarr_main_document_root='C:/xampp/htdocs/dolibarr';
 $dolibarr_main_url_root_alt='/custom';
