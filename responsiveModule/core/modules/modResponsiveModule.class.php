@@ -273,7 +273,7 @@ class modResponsiveModule extends DolibarrModules
             'fk_menu'=>'', // '' if this is a top menu. For left menu, use 'fk_mainmenu=xxx' or 'fk_mainmenu=xxx,fk_leftmenu=yyy' where xxx is mainmenucode and yyy is a leftmenucode
             'type'=>'top', // This is a Top menu entry
             'titre'=>'Responsive',
-            'mainmenu'=>'responsivemodule2',
+            'mainmenu'=>'responsivemodule',
             'leftmenu'=>'',
             'url'=>'/responsivemodule/responsivemoduleindex.php',
             'langs'=>'responsivemodule@responsivemodule', // Lang file to use (without .lang) by module. File must be in langs/code_CODE/ directory.
@@ -284,13 +284,13 @@ class modResponsiveModule extends DolibarrModules
             'user'=>2, // 0=Menu for internal users, 1=external users, 2=both
         );
         /* END MODULEBUILDER TOPMENU */
-        /* BEGIN MODULEBUILDER LEFTMENU MYOBJECT
+        /* BEGIN MODULEBUILDER LEFTMENU MYOBJECT*/
         $this->menu[$r++]=array(
             'fk_menu'=>'fk_mainmenu=responsivemodule',      // '' if this is a top menu. For left menu, use 'fk_mainmenu=xxx' or 'fk_mainmenu=xxx,fk_leftmenu=yyy' where xxx is mainmenucode and yyy is a leftmenucode
             'type'=>'left',                          // This is a Top menu entry
-            'titre'=>'MyObject',
+            'titre'=>'Responsive Modules',
             'mainmenu'=>'responsivemodule',
-            'leftmenu'=>'myobject',
+            'leftmenu'=>'responsivemodule',
             'url'=>'/responsivemodule/responsivemoduleindex.php',
             'langs'=>'responsivemodule@responsivemodule',	        // Lang file to use (without .lang) by module. File must be in langs/code_CODE/ directory.
             'position'=>1000+$r,
@@ -302,16 +302,16 @@ class modResponsiveModule extends DolibarrModules
         $this->menu[$r++]=array(
             'fk_menu'=>'fk_mainmenu=responsivemodule,fk_leftmenu=myobject',	    // '' if this is a top menu. For left menu, use 'fk_mainmenu=xxx' or 'fk_mainmenu=xxx,fk_leftmenu=yyy' where xxx is mainmenucode and yyy is a leftmenucode
             'type'=>'left',			                // This is a Left menu entry
-            'titre'=>'List MyObject',
+            'titre'=>'List Responsive Modules',
             'mainmenu'=>'responsivemodule',
-            'leftmenu'=>'responsivemodule_myobject_list',
-            'url'=>'/responsivemodule/myobject_list.php',
+            'leftmenu'=>'responsivemodule',
+            'url'=>'/responsivemodule/responsivemoduleindex.php',
             'langs'=>'responsivemodule@responsivemodule',	        // Lang file to use (without .lang) by module. File must be in langs/code_CODE/ directory.
             'position'=>1000+$r,
-            'enabled'=>'$conf->responsivemodule->enabled',  // Define condition to show or hide menu entry. Use '$conf->responsivemodule->enabled' if entry must be visible if module is enabled. Use '$leftmenu==\'system\'' to show if leftmenu system is selected.
+            'enabled'=>'$conf->responsivemodule->enabled',  // Define condition to show or hide menu entry. Use '$conf->responsivemodule->enabled' if entry must be visible if module is enabled.
             'perms'=>'$user->rights->responsivemodule->myobject->read',			                // Use 'perms'=>'$user->rights->responsivemodule->level1->level2' if you want your menu with a permission rules
             'target'=>'',
-            'user'=>2,				                // 0=Menu for internal users, 1=external users, 2=both
+            'user'=>2,					                // 0=Menu for internal users, 1=external users, 2=both
         );
         $this->menu[$r++]=array(
             'fk_menu'=>'fk_mainmenu=responsivemodule,fk_leftmenu=myobject',	    // '' if this is a top menu. For left menu, use 'fk_mainmenu=xxx' or 'fk_mainmenu=xxx,fk_leftmenu=yyy' where xxx is mainmenucode and yyy is a leftmenucode
@@ -327,7 +327,7 @@ class modResponsiveModule extends DolibarrModules
             'target'=>'',
             'user'=>2,				                // 0=Menu for internal users, 1=external users, 2=both
         );
-        END MODULEBUILDER LEFTMENU MYOBJECT */
+        /*END MODULEBUILDER LEFTMENU MYOBJECT */
 
         // Exports profiles provided by this module
         $r = 1;

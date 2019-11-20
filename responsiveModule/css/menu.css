@@ -8,7 +8,7 @@ and open the template in the editor.
     Author     : cristian.valles
 */
 body{
-    background: red !important;
+    //background: red !important;
 }
 div.mainmenu.responsivemodule {
 	background-image: url("../img/responsiveicon2.png");
