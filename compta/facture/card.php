@@ -50,6 +50,7 @@ require_once DOL_DOCUMENT_ROOT.'/core/lib/invoice.lib.php';
 require_once DOL_DOCUMENT_ROOT.'/core/lib/functions2.lib.php';
 require_once DOL_DOCUMENT_ROOT.'/core/lib/date.lib.php';
 require_once DOL_DOCUMENT_ROOT.'/core/class/extrafields.class.php';
+require_once DOL_DOCUMENT_ROOT.'/basic_lib/resolucio_incidencies.php';
 if (!empty($conf->commande->enabled))
 	require_once DOL_DOCUMENT_ROOT.'/commande/class/commande.class.php';
 if (!empty($conf->projet->enabled)) {
@@ -1581,10 +1582,13 @@ if (empty($reshook))
 							setEventMessages($hookmanager->error, $hookmanager->errors, 'errors');
 							$error++;
 						}
+                                                
 					} else {
 						setEventMessages($object->error, $object->errors, 'errors');
 						$error++;
 					}
+                                        
+                                        
 				}
 				else
 				{   // If some invoice's lines coming from page
@@ -1697,7 +1701,10 @@ if (empty($reshook))
 		if ($id > 0 && !$error)
 		{
 			$db->commit();
-
+                        //VASA actulitzar extrafields un cop creada la factura ($id = idfactura)
+                        $resolucioIncidencies = new ResolucioInicidencies($db);
+                        $resolucioIncidencies->actualitzarLiniaFacturaEnIncidencia($id);
+                        
 			// Define output language
 			if (empty($conf->global->MAIN_DISABLE_PDF_AUTOUPDATE) && count($object->lines))
 			{

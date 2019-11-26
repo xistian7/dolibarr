@@ -44,6 +44,7 @@ require_once DOL_DOCUMENT_ROOT.'/product/class/product.class.php';
 require_once DOL_DOCUMENT_ROOT.'/societe/class/client.class.php';
 require_once DOL_DOCUMENT_ROOT.'/margin/lib/margins.lib.php';
 require_once DOL_DOCUMENT_ROOT.'/multicurrency/class/multicurrency.class.php';
+require_once DOL_DOCUMENT_ROOT.'/basic_lib/resolucio_incidencies.php';
 
 if (!empty($conf->accounting->enabled)) require_once DOL_DOCUMENT_ROOT.'/core/class/html.formaccounting.class.php';
 if (!empty($conf->accounting->enabled)) require_once DOL_DOCUMENT_ROOT.'/accountancy/class/accountingaccount.class.php';
@@ -851,6 +852,7 @@ class Facture extends CommonInvoice
 
 			if (!$error)
 			{
+                            
 				$result = $this->update_price(1);
 				if ($result > 0)
 				{
@@ -873,7 +875,9 @@ class Facture extends CommonInvoice
 
 					if (!$error)
 					{
+                                            
 						$this->db->commit();
+                                                
 						return $this->id;
 					}
 					else
@@ -902,6 +906,7 @@ class Facture extends CommonInvoice
 			$this->db->rollback();
 			return -1;
 		}
+                
 	}
 
 

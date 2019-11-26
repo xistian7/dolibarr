@@ -1,0 +1,11 @@
+SELECT ELEMELEM.fk_source,FACTDET.description,FICHDET.description,FICHDETEXTRA.servicios2,FICHDETEXTRA.cantidad2,PROD.label  FROM llx_facturedet AS FACTDET
+LEFT JOIN llx_facture AS FACT ON FACTDET.fk_facture = FACT.rowid
+LEFT JOIN llx_element_element AS ELEMELEM ON ELEMELEM.fk_target = FACTDET.fk_facture
+LEFT JOIN llx_fichinterdet AS FICHDET ON FICHDET.fk_fichinter = ELEMELEM.fk_source AND FACTDET.description = FICHDET.description
+LEFT JOIN llx_fichinterdet_extrafields AS FICHDETEXTRA ON FICHDETEXTRA.fk_object = FICHDET.rowid
+LEFT JOIN llx_product AS PROD ON PROD.rowid = FICHDETEXTRA.servicios2
+WHERE FACTDET.fk_facture = 81
+
+'UPDATE llx_facturedet SET FACDET.qty = FACT.rowid FROM llx_facturedet FACTDET
+LEFT JOIN llx_facture FACT ON FACTDET.fk_facture = FACT.rowid;
+WHERE FACDET.fk_facture = '. $factureID
